@@ -82,11 +82,11 @@ const requestDuration = new Histogram({
 
 ### 2. Define SLIs/SLOs Early
 
-| SLI | Target | Measurement |
-|-----|--------|-------------|
-| Availability | 99.9% | successful_requests / total_requests |
-| Latency (p99) | < 500ms | request_duration_seconds |
-| Error Rate | < 0.1% | error_requests / total_requests |
+| SLI           | Target  | Measurement                          |
+| ------------- | ------- | ------------------------------------ |
+| Availability  | 99.9%   | successful_requests / total_requests |
+| Latency (p99) | < 500ms | request_duration_seconds             |
+| Error Rate    | < 0.1%  | error_requests / total_requests      |
 
 ### 3. Build Dashboards Before Launch
 
@@ -109,12 +109,12 @@ groups:
 
 ## Required Artifacts
 
-| Artifact | Purpose | Owner |
-|----------|---------|-------|
+| Artifact         | Purpose                     | Owner                 |
+| ---------------- | --------------------------- | --------------------- |
 | SLI/SLO Document | Define service expectations | Product + Engineering |
-| Dashboard JSON | Service visibility | SRE |
-| Alert Rules | Proactive monitoring | SRE |
-| Runbook | Incident response | SRE |
+| Dashboard JSON   | Service visibility          | SRE                   |
+| Alert Rules      | Proactive monitoring        | SRE                   |
+| Runbook          | Incident response           | SRE                   |
 
 ## Configuration Example
 
@@ -126,11 +126,11 @@ spec:
     metricsEnabled: true
     metricsPort: 9090
     metricsPath: /metrics
-    
+
     tracingEnabled: true
     tracingEndpoint: http://jaeger:14268/api/traces
-    tracingSampleRate: 0.1  # 10% in production
-    
+    tracingSampleRate: 0.1 # 10% in production
+
     loggingLevel: info
     loggingFormat: json
     loggingFields:

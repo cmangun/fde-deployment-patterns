@@ -100,9 +100,7 @@ export function validateConfig(config: unknown): ValidationResult {
   if (!result.success) {
     return {
       valid: false,
-      errors: result.error.issues.map(
-        (issue) => `${issue.path.join('.')}: ${issue.message}`
-      ),
+      errors: result.error.issues.map((issue) => `${issue.path.join('.')}: ${issue.message}`),
       warnings: [],
     };
   }

@@ -62,12 +62,12 @@ Deploy AI/ML services in constrained or regulated network environments where ext
 
 ## Required Artifacts
 
-| Artifact | Purpose | Owner |
-|----------|---------|-------|
-| Network Diagram | Document allowed connections | Platform Team |
-| Egress Allowlist | Explicit list of permitted outbound calls | Security |
-| Runbook | Operational procedures | SRE |
-| Validation Checklist | Pre-deployment verification | DevOps |
+| Artifact             | Purpose                                   | Owner         |
+| -------------------- | ----------------------------------------- | ------------- |
+| Network Diagram      | Document allowed connections              | Platform Team |
+| Egress Allowlist     | Explicit list of permitted outbound calls | Security      |
+| Runbook              | Operational procedures                    | SRE           |
+| Validation Checklist | Pre-deployment verification               | DevOps        |
 
 ## Configuration Example
 
@@ -83,7 +83,7 @@ spec:
       - model-registry.internal
       - metrics.internal
     egressBlocked:
-      - "*"
+      - '*'
   observability:
     metricsEnabled: true
     # Local Prometheus endpoint

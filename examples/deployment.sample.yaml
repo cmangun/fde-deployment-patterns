@@ -15,7 +15,7 @@ spec:
     tag: v1.2.3
     port: 8080
     resources:
-      cpu: "2"
+      cpu: '2'
       memory: 4Gi
     healthCheck:
       path: /health
@@ -32,8 +32,8 @@ spec:
   rollout:
     type: canary
     canaryPercentage: 10
-    maxSurge: "25%"
-    maxUnavailable: "0%"
+    maxSurge: '25%'
+    maxUnavailable: '0%'
 
   network:
     ingressAllowed:
@@ -43,7 +43,7 @@ spec:
       - vector-db
       - llm-provider-api
     egressBlocked:
-      - "*"
+      - '*'
 
   observability:
     metricsEnabled: true

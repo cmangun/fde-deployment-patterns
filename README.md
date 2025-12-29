@@ -10,11 +10,11 @@ This repository provides battle-tested deployment patterns used in enterprise AI
 
 ## Pattern Catalog
 
-| Pattern | Use Case |
-|---------|----------|
-| [Secure Edge](patterns/secure-edge.md) | Regulated networks, air-gapped environments |
-| [Hybrid Bridge](patterns/hybrid-bridge.md) | On-prem to cloud connectivity |
-| [Observability First](patterns/observability-first.md) | Production-ready monitoring |
+| Pattern                                                | Use Case                                    |
+| ------------------------------------------------------ | ------------------------------------------- |
+| [Secure Edge](patterns/secure-edge.md)                 | Regulated networks, air-gapped environments |
+| [Hybrid Bridge](patterns/hybrid-bridge.md)             | On-prem to cloud connectivity               |
+| [Observability First](patterns/observability-first.md) | Production-ready monitoring                 |
 
 ## CLI Validator
 
@@ -64,7 +64,7 @@ kind: Deployment
 metadata:
   name: my-service
   namespace: ai-platform
-  environment: production  # development | staging | production
+  environment: production # development | staging | production
 
 spec:
   service:
@@ -73,7 +73,7 @@ spec:
     tag: v1.0.0
     port: 8080
     resources:
-      cpu: "1"
+      cpu: '1'
       memory: 2Gi
     healthCheck:
       path: /health
@@ -85,14 +85,14 @@ spec:
     targetCPUUtilization: 70
 
   rollout:
-    type: canary  # rolling | blue-green | canary
+    type: canary # rolling | blue-green | canary
     canaryPercentage: 10
 
   network:
     egressAllowed:
       - api.external.com
     egressBlocked:
-      - "*"
+      - '*'
 
   observability:
     metricsEnabled: true
@@ -101,8 +101,8 @@ spec:
 
 ## Templates
 
-| Template | Description |
-|----------|-------------|
+| Template                                          | Description                   |
+| ------------------------------------------------- | ----------------------------- |
 | [Runbook Template](templates/runbook-template.md) | Operational runbook structure |
 
 ## Quickstart

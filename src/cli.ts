@@ -75,10 +75,11 @@ Examples:
     console.log(`  Namespace: ${result.config!.metadata.namespace}`);
     console.log(`  Environment: ${result.config!.metadata.environment}`);
     console.log(`  Service: ${result.config!.spec.service.name}`);
-    console.log(`  Scaling: ${result.config!.spec.scaling.minReplicas}-${result.config!.spec.scaling.maxReplicas} replicas`);
+    console.log(
+      `  Scaling: ${result.config!.spec.scaling.minReplicas}-${result.config!.spec.scaling.maxReplicas} replicas`
+    );
     console.log(`  Rollout: ${result.config!.spec.rollout.type}`);
     console.log('');
-
   } catch (error) {
     if (error instanceof Error) {
       if (error.message.includes('ENOENT')) {

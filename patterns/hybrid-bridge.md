@@ -65,12 +65,12 @@ Enable secure communication between on-premises infrastructure and cloud service
 
 ## Required Artifacts
 
-| Artifact | Purpose | Owner |
-|----------|---------|-------|
-| Boundary Diagram | Document zone separation | Architecture |
-| Transfer Protocol | Define handoff format | Engineering |
-| Security Review | Validate boundary controls | Security |
-| Runbook | Operational procedures | SRE |
+| Artifact          | Purpose                    | Owner        |
+| ----------------- | -------------------------- | ------------ |
+| Boundary Diagram  | Document zone separation   | Architecture |
+| Transfer Protocol | Define handoff format      | Engineering  |
+| Security Review   | Validate boundary controls | Security     |
+| Runbook           | Operational procedures     | SRE          |
 
 ## Configuration Example
 
@@ -85,12 +85,12 @@ spec:
     stagingPath: /data/staging
     batchSize: 1000
     signBundles: true
-  
+
   transfer:
-    protocol: sftp  # or s3, azure-blob, gcs
+    protocol: sftp # or s3, azure-blob, gcs
     encryption: aes-256-gcm
     validateSignature: true
-  
+
   consumer:
     landingZone: s3://my-bucket/landing
     processingConcurrency: 4
