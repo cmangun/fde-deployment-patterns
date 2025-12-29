@@ -1,0 +1,46 @@
+{
+  "name": "fde-deployment-patterns",
+  "version": "0.1.0",
+  "description": "Reusable deployment patterns for forward-deployed AI/ML engagements",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "fde-validate": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lint": "eslint src test --ext .ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "node dist/cli.js"
+  },
+  "keywords": [
+    "deployment",
+    "patterns",
+    "fde",
+    "devops",
+    "kubernetes",
+    "ai"
+  ],
+  "author": "Christopher Mangun <cmangun@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.6.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

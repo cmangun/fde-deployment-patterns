@@ -1,0 +1,52 @@
+apiVersion: fde/v1
+kind: Deployment
+metadata:
+  name: llm-service
+  namespace: ai-platform
+  environment: production
+  labels:
+    team: ml-platform
+    tier: inference
+
+spec:
+  service:
+    name: llm-inference
+    image: gcr.io/my-project/llm-service
+    tag: v1.2.3
+    port: 8080
+    resources:
+      cpu: "2"
+      memory: 4Gi
+    healthCheck:
+      path: /health
+      port: 8080
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+
+  scaling:
+    minReplicas: 2
+    maxReplicas: 8
+    targetCPUUtilization: 70
+
+  rollout:
+    type: canary
+    canaryPercentage: 10
+    maxSurge: "25%"
+    maxUnavailable: "0%"
+
+  network:
+    ingressAllowed:
+      - api-gateway
+      - internal-clients
+    egressAllowed:
+      - vector-db
+      - llm-provider-api
+    egressBlocked:
+      - "*"
+
+  observability:
+    metricsEnabled: true
+    metricsPort: 9090
+    tracingEnabled: true
+    loggingLevel: info
