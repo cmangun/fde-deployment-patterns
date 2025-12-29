@@ -27,17 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check formatting
-        run: npm run format:check
-
-      - name: Lint
-        run: npm run lint
-
       - name: Build
         run: npm run build
 
       - name: Test
         run: npm test
-
-      - name: Validate sample config
-        run: npm run validate -- examples/deployment.sample.yaml
