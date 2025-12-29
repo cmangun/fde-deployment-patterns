@@ -1,6 +1,8 @@
 # FDE Deployment Patterns
 
-![Architecture](./docs/architecture.png)
+![Overview](./docs/overview.png)
+
+> Deployment lifecycle used across customer environments.
 
 [![CI](https://github.com/cmangun/fde-deployment-patterns/actions/workflows/ci.yml/badge.svg)](https://github.com/cmangun/fde-deployment-patterns/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/Node-20+-green?style=flat-square&logo=node.js)]()
