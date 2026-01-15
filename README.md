@@ -13,7 +13,7 @@ Reusable deployment patterns and validation tools for forward-deployed AI engage
 
 ---
 
-## 🚀 Run in 60 Seconds
+## Run in 60 Seconds
 
 ```bash
 git clone https://github.com/cmangun/fde-deployment-patterns.git
@@ -38,7 +38,7 @@ node dist/cli.js examples/deployment.sample.yaml
 
 ---
 
-## 📊 Customer Value
+## Customer Value
 
 This pattern typically delivers:
 - **70% fewer deployment failures** (validation before deploy)
